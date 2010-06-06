@@ -250,7 +250,7 @@ bool ConfigInitialPage::_getPoints(const QString &content)
     QStringList lines = pointStr.split("\n");
     lines.removeAt(0);
 
-    QRegExp regexp("([\\-\\d\\.]+)[\\s\\t]+([\\-\\d\\.]+)");
+    QRegExp regexp("([\\-\\d\\.]+)[\\s\\t]+([\\-\\d\\.]+).*");
     std::vector<Point> points;
     for (int i = 0; i < lines.size(); i++)
     {

@@ -1,13 +1,14 @@
-#include "plot.h"
 #include <qwt_plot_curve.h>
 #include <qwt_legend.h>
 #include <qwt_legend_item.h>
 #include <qwt_symbol.h>
 #include <qwt_text_engine.h>
+#include <qwt_scale_engine.h>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include "polinomial.h"
 #include "algorithm/curve.h"
+#include "plot.h"
 
 Plot::Plot(QWidget *parent)
     : QwtPlot(parent)
@@ -104,8 +105,14 @@ void Plot::createGraph()
     int stepY = (maxY - minY)/10;
     int stepX = (maxX - minX)/10;
 
-    setAxisScale(QwtPlot::xBottom, minX, maxX, stepX);
-    setAxisScale(QwtPlot::yLeft, minY, maxY, stepY);
+    QwtLog10ScaleEngine* logScale = new QwtLog10ScaleEngine();
+    setAxisScaleEngine(QwtPlot::xBottom, logScale);
+    setAxisScaleEngine(QwtPlot::yLeft, logScale);
+
+
+//    setAxisScale(QwtPlot::xBottom, minX, maxX, stepX);
+//    setAxisScale(QwtPlot::yLeft, minY, maxY, stepY);
+
 
     replot();
 }

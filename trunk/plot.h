@@ -15,7 +15,7 @@ public:
     ~Plot();
     void setProjectTitle(const QString& title);
     void setEquationName(const QString& name);
-    void setNrPoints(int nr) { nrPoints = nr; };
+    void setNrPoints(int nr) { nrPoints = nr; }
     void createGraph();
 
 protected:

@@ -50,7 +50,7 @@ std::vector<double> MinimosQuadrados::somatorioXmulY(const vector<double> matrix
 			mulXY[i] = mulXY[i] + matrix_y[j] * pow(matrix_x[j], i);
         }
     }
-        cout << 'valor de mulXY\n'<< mulXY <<endl;
+        
     return mulXY;
 }
 
@@ -258,6 +258,9 @@ std::vector<double> MinimosQuadrados::calcular()
         r = sqrt(r2);
 
     coef_correlacao = r;
+    
+    delete[] INDX;
+    delete[] B;
 	
     return c;
 }

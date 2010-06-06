@@ -24,6 +24,7 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
+    , plot(NULL)
     , all_coeficientes(new std::vector<std::vector<double> >())
     , all_coef_correlacao(new std::vector<double>())
     , curves(new std::vector<Curve>())
@@ -47,6 +48,8 @@ MainWindow::~MainWindow()
     delete curves;
     delete all_coeficientes;
     delete all_coef_correlacao;
+    if (plot)
+    	delete plot;
 }
 
 void MainWindow::createActions()
