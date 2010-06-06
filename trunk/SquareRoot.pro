@@ -65,3 +65,6 @@ win32 {
 }
 else:LIBS += -L$${QWT_ROOT}/lib \
     -l$${QWTLIB}
+
+OTHER_FILES += \
+    INSTALL.txt
