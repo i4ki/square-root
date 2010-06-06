@@ -61,6 +61,8 @@ ConfigInitialPage::ConfigInitialPage(QWidget *parent)
 
     label1 = new QLabel(tr("Quantas curvas voce deseja calcular?"), this);
     label2 = new QLabel(tr("Qual o grau para o ajuste polinomial?"), this);
+    label6 = new QLabel(tr("Qual o tipo de escala?"), this);
+
     QString pergunta3Str;
     pergunta3Str.append(
             tr("\nPara a entrada dos pontos experimentais você pode importar ")

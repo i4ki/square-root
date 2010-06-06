@@ -62,6 +62,8 @@ protected:
     QLabel* label3;
     QLabel* label4;
     QLabel* label5;
+    QLabel* label6;
+
     QPushButton* verBtn;
     QPushButton* openFileBtn;
     QPushButton* insertDataBtn;
