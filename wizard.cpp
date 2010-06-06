@@ -48,7 +48,7 @@ void Wizard::accept()
 
                 Curve crv = curves[i];
                 minQuad.setExperimentalData(crv);
-                /** inicializar esse cara antes */
+
                 std::vector<double> c(graupolin+1);
 
                 c = minQuad.calcular();
