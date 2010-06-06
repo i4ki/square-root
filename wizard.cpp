@@ -2,6 +2,7 @@
 #include "wizardpages.h"
 #include "algorithm/curve.h"
 #include "algorithm/minimosquadrados.h"
+#include <cmath>
 #include <QDebug>
 
 Wizard::Wizard(QWidget *parent, std::vector<std::vector<double> > *all_coef, std::vector<double> *all_coef_corr, std::vector<Curve>* curves)
@@ -46,7 +47,16 @@ void Wizard::accept()
                 MinimosQuadrados minQuad;
                 minQuad.setGrauPolin(graupolin);
 
-                Curve crv = curves[i];
+
+                Curve crv;
+                std::vector<Point> temp = curves[i].getPoints();
+
+                for (unsigned j = 0; j < temp.size(); j++)
+                {
+                    Point p(::log(temp.at(j).getX()), ::log(temp.at(j).getY()));
+                    crv.addPoint(p);
+                }
+
                 minQuad.setExperimentalData(crv);
 
                 std::vector<double> c(graupolin+1);
@@ -57,7 +67,7 @@ void Wizard::accept()
             }
         } catch (std::string e)
         {
-            qDebug() << "ERRO";
+            qDebug() << "Erro ao calcular os minimos quadrados: ";
         }
     }
 
