@@ -136,7 +136,7 @@ void PlotCurve::plotGraph()
     for (int i = 0; i < nrPoints; i++)
     {
         x[i] = (i * step/100 + minX);
-        y[i] = ::log(poly.polinomy(x[i]));
+        y[i] = (poly.polinomy(x[i]));
     }
 
     setData(x, y, nrPoints);

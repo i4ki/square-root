@@ -105,13 +105,13 @@ void Plot::createGraph()
     int stepY = (maxY - minY)/10;
     int stepX = (maxX - minX)/10;
 
-    QwtLog10ScaleEngine* logScale = new QwtLog10ScaleEngine();
-    setAxisScaleEngine(QwtPlot::xBottom, logScale);
-    setAxisScaleEngine(QwtPlot::yLeft, logScale);
+//    QwtLog10ScaleEngine* logScale = new QwtLog10ScaleEngine();
+//    setAxisScaleEngine(QwtPlot::xBottom, logScale);
+//    setAxisScaleEngine(QwtPlot::yLeft, logScale);
 
 
-//    setAxisScale(QwtPlot::xBottom, minX, maxX, stepX);
-//    setAxisScale(QwtPlot::yLeft, minY, maxY, stepY);
+    setAxisScale(QwtPlot::xBottom, minX, maxX, stepX);
+    setAxisScale(QwtPlot::yLeft, minY, maxY, stepY);
 
 
     replot();
