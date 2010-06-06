@@ -132,11 +132,12 @@ void PlotCurve::plotGraph()
 
     x = new double[nrPoints];
     y = new double[nrPoints];
+    std::vector<double> coef = poly.getCoeficientes();
 
     for (int i = 0; i < nrPoints; i++)
     {
         x[i] = (i * step/100 + minX);
-        y[i] = (poly.polinomy(x[i]));
+        y[i] = ::exp(coef[0]) * ::exp(coef[1] * ::log(x[i]));
     }
 
     setData(x, y, nrPoints);
@@ -183,5 +184,4 @@ void PlotCurve::plotExperimentalPoints()
 
     setData(x, y, nrPoints);
 }
-
 

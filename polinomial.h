@@ -7,6 +7,7 @@ class Polinomial
 {
 public:
     void setCoeficientes(std::vector<double> _c);
+    std::vector<double> getCoeficientes() const { return c; }
     double polinomy(double x);
     double _polinomy(double x);
 
